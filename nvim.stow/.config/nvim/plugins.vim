@@ -66,9 +66,6 @@ Plug 'sebastianmarkow/deoplete-rust'
 " Toggle quickfix with \q and location list with \l
 Plug 'milkypostman/vim-togglelist'
 
-" Turn off caps when change from insert to normal mode
-Plug 'suxpert/vimcaps'
-
 call plug#end()
 " }}} Pluggins "
 
