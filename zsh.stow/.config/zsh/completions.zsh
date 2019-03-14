@@ -16,8 +16,8 @@ fpath=( "$HOME/.local/share/zsh/functions/Completion" $fpath )
 
 # FZF completion
 if (( $+commands[fzf] )); then
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/fzf/key-bindings.zsh
+    source $HOME/.fzf/shell/completion.zsh
+    source $HOME/.fzf/shell/key-bindings.zsh
 else
     echo Please install fzf
 fi
