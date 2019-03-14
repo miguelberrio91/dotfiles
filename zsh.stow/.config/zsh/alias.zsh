@@ -67,3 +67,5 @@ alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
 
+# fd in WSL
+alias fd=fdfind
