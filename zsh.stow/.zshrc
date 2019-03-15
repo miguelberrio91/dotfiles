@@ -49,6 +49,6 @@ zplug load
 for config ($ZDOTDIR/**/*.zsh) source $config
 
 # Match files and directories starting with dot '.'
-setopt globdots
+# setopt globdots
 
 compinit

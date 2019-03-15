@@ -12,7 +12,8 @@ call plug#begin($NVIM_PLUG_DIR)
 
 " Aesthetics
 Plug 'romainl/Apprentice',         { 'branch' : 'fancylines-and-neovim' }
-" TODO: Statusline
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 
 " TODO: Activate???
 " Plug 'mhinz/vim-startify'
@@ -130,6 +131,15 @@ function! LC_maps()
 endfunction
 autocmd FileType * call LC_maps()
 " }}} Language Client "
+
+" Lightline {{{ "
+let g:lightline = {}
+let g:lightline.colorscheme = 'apprentice'
+let g:lightline#bufferline#show_number  = 1
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [[]]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+" }}} Lightline "
 
 " Neomake {{{ "
 let g:neomake_open_list = 0

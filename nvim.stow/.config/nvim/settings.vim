@@ -51,7 +51,7 @@ set tabstop=4
 
 " trails
 set list
-set listchars=tab:\|\ ,trail:·,precedes:«,extends:»,nbsp:·,eol:¬,space:·
+set listchars=tab:\|\ ,trail:·,precedes:«,extends:»,nbsp:·
 
 " TODO: WTF???
 " style of divider
@@ -63,6 +63,7 @@ set hidden
 set number
 set relativenumber
 set scrolloff=5
+set showtabline=2
 
 " Updatetime
 set updatetime=500

@@ -1,0 +1,26 @@
+snippet comment "Insert a comment" i
+
+[comment]: # (${1})
+endsnippet
+
+snippet s1 "Section" i
+# ${1:${VISUAL:section name}} <a name="sec-${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}" />
+
+$0
+endsnippet
+
+snippet s2 "Subsection" i
+## ${1:${VISUAL:subsection name}} <a name="sub-${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}" />
+
+$0
+endsnippet
+
+snippet s3 "Subsubsection" i
+### ${1:${VISUAL:subsubsection name}} <a name="ssub-${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}" />
+
+$0
+endsnippet
+
+snippet toc "TOC Entry" i
+1. [${1:${VISUAL:subsubsection name}}](#${2:${VISUAL:sec|sub|ssub}}-${3:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}})
+endsnippet
