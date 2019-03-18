@@ -51,6 +51,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
 
 " Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 
 " Snippets

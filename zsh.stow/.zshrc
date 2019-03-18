@@ -52,3 +52,7 @@ for config ($ZDOTDIR/**/*.zsh) source $config
 # setopt globdots
 
 compinit
+
+case $- in *i*)
+        if [ -z "$TMUX" ]; then exec tmux; fi;;
+esac
