@@ -34,6 +34,7 @@ Plug 'tpope/vim-surround'
 
 " Git integration (Show diff on files)
 Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/vim-gitbranch'
 
 " A better Vimdiff Git mergetool
 " Plug 'whiteinge/diffconflicts'
@@ -136,6 +137,21 @@ autocmd FileType * call LC_maps()
 " Lightline {{{ "
 let g:lightline = {}
 let g:lightline.colorscheme = 'apprentice'
+
+let g:lightline.component_function = { 'gitbranch' : 'GitBranchName' }
+let g:lightline.active = {
+            \ 'left' : [ [ 'mode', 'paste' ],
+            \            [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \ }
+
+function! GitBranchName()
+    let b:name = gitbranch#name()
+    if b:name != '' && GitGutterGetHunks() != []
+        return b:name . "*"
+    endif
+    return b:name
+endfunction
+
 let g:lightline#bufferline#show_number  = 1
 let g:lightline.tabline          = {'left': [['buffers']], 'right': [[]]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
