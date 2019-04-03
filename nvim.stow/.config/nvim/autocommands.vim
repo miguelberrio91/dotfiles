@@ -11,7 +11,10 @@ function! StripWhiteSpaces()
     if &ft =~ 'gitcommit\|diff'
     return
     endif
+    mark s
     %s/\s\+$//e
+    's
+    delmarks s
 endfunction
 " autocmd BufWritePre * silent! %s/\s\+$//ge
 autocmd BufWritePre * silent! call StripWhiteSpaces()
