@@ -96,13 +96,14 @@ no <Leader>fg :GFiles<CR>
 " }}} FZF - Fuzzy finder "
 
 " Gitgutter {{{ "
-nmap ]h :GitGutterNextHunk<CR>
-nmap [h :GitGutterPrevHunk<CR>
+let g:gitgutter_map_keys = 0
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
-nmap ghr :GitGutterRevertHunk<CR>
-nmap gha :GitGutterStageHunk<CR>
-nmap ghh :GitGutterLineHighlightsToggle<CR>
-nmap ghf :GitGutterFold<CR>
+nmap <Leader>hp <Plug>GitGutterPreviewHunk
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hu <Plug>GitGutterUndoHunk
+nmap <Leader>hh :GitGutterLineHighlightsToggle<CR>
 
 " Use hunks as objects
 omap ih <Plug>GitGutterTextObjectInnerPending
