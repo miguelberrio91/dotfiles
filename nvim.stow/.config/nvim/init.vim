@@ -27,6 +27,9 @@ Plug 'mengelbrecht/lightline-bufferline'
 " Save persistent sessions on a workspace
 Plug 'thaerkh/vim-workspace'
 
+" Show indentation guides
+Plug 'Yggdroot/indentLine'
+
 " Language Client
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch'                    : 'next',
@@ -126,6 +129,10 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '~_'
 let g:gitgutter_grep_command = 'rg'
 " }}} Gitgutter "
+
+" Indentguides {{{ "
+let g:indentLine_char = '|'
+" }}} Indentguides "
 
 " Language Client {{{ "
 let g:LanguageClient_autoStart = 1
