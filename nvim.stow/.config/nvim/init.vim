@@ -6,6 +6,7 @@ let $CONFIG_PATH = expand('$HOME/.config/nvim')
 
 let $NVIM_PLUG_SOURCE = expand('$HOME/.local/share/nvim/site/autoload/plug.vim')
 let $NVIM_PLUG_DIR = expand('$HOME/.local/share/nvim/plugged')
+let $NVIM_SESSIONS_DIR = expand('$HOME/.local/share/nvim/sessions')
 
 if empty(glob($NVIM_PLUG_SOURCE))
   silent !curl -fLo $NVIM_PLUG_SOURCE --create-dirs
@@ -23,6 +24,8 @@ Plug 'mengelbrecht/lightline-bufferline'
 
 " TODO: Activate???
 " Plug 'mhinz/vim-startify'
+" Save persistent sessions on a workspace
+Plug 'thaerkh/vim-workspace'
 
 " Language Client
 Plug 'autozimu/LanguageClient-neovim', {
@@ -188,3 +191,10 @@ let g:UltiSnipsSnippetDirectories = ['snippets/UltiSnips', 'UltiSnips']
 let g:UltiSnipsSnippetDir = "~/.config/nvim/snippets/UltiSnips"
 " }}} Ultisnips "
 
+" Workspace {{{ "
+nnoremap <leader>s :ToggleWorkspace<CR>
+let g:workspace_session_directory = $NVIM_SESSIONS_DIR
+let g:workspace_persist_undo_history = 0
+let g:workspace_autosave = 0
+let g:workspace_session_disable_on_args = 1
+" }}} Workspace "
