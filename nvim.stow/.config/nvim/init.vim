@@ -41,6 +41,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'cespare/vim-toml'
 
+" C# plugins
+Plug 'OmniSharp/omnisharp-vim'
+
 " Markdown plugins
 Plug 'tpope/vim-markdown'
 
@@ -87,6 +90,12 @@ Plug 'milkypostman/vim-togglelist'
 call plug#end()
 " }}} Pluggins "
 
+" Ale - Linters {{{ "
+" let g:ale_linters = {
+"             \ 'cs' : ['OmniSharp']
+"             \ }
+" }}} Ale - Linters "
+
 " Autopairs {{{ "
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
@@ -97,6 +106,9 @@ imap <silent><CR> <CR><Plug>AutoPairsReturn
 
 " Deoplete - Completion framework {{{ "
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+            \ 'cs': ['omnisharp'],
+            \ })
 " }}} Deoplete - Completion framework "
 
 " Easymotion {{{ "
@@ -178,6 +190,16 @@ let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
 " }}} Lightline "
 
+" OmniSharp {{{ "
+set completeopt=longest,menuone,preview
+let g:OmniSharp_server_path = '/mnt/c/Tools/omnisharp.http-win-x64/OmniSharp.exe'
+let g:OmniSharp_translate_cygwin_wsl = 1
+
+" User server on .net core projects
+" Create file global.json with content `{}`
+" let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_prefer_global_sln = 1
+" }}} OmniSharp "
 
 " Python provider for Neovim {{{ "
 let g:python_host_prog  = '/usr/bin/python2'
