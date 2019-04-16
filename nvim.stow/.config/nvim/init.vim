@@ -75,7 +75,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Neomake
-Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 
 " Code completion
 Plug ('Shougo/deoplete.nvim'),         { 'do'     : ':UpdateRemotePlugins' }
@@ -178,10 +178,6 @@ let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
 " }}} Lightline "
 
-" Neomake {{{ "
-let g:neomake_open_list = 0
-call neomake#configure#automake('rw', 1000)
-" }}} Neomake "
 
 " Python provider for Neovim {{{ "
 let g:python_host_prog  = '/usr/bin/python2'
