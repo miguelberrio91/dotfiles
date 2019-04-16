@@ -2,8 +2,7 @@
 augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC nested :source $MYVIMRC
-    autocmd BufWritePost $HOME/.config/nvim/*.vim nested :source $MYVIMRC
-    autocmd BufWritePost $MYVIMRC AirlineRefresh
+    autocmd BufWritePost $HOME/.config/nvim/**/*.vim nested :source $MYVIMRC
 augroup END
 
 " Autoremove trailing white spaces spaces and convert tabs in spaces
