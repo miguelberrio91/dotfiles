@@ -41,6 +41,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'cespare/vim-toml'
 
+" Markdown plugins
+Plug 'tpope/vim-markdown'
+
 " Add, change and delete surroundings
 Plug 'tpope/vim-surround'
 
