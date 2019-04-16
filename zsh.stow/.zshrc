@@ -24,7 +24,7 @@ zplug "zpm-zsh/zpm", use:"plugins/{cd,git,zsh-core}"
 zplug "zsh-users/zsh-completions"
 
 # Theme
-PURE_PROMPT_SYMBOL="-> "
+PURE_PROMPT_SYMBOL="> "
 PURE_PROMPT_VICMD_SYMBOL="< "
 PURE_GIT_UP_ARROW=">"
 PURE_GIT_DOWN_ARROW="<"
