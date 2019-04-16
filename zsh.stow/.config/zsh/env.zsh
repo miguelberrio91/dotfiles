@@ -22,6 +22,8 @@ export PATH=$PATH:$HOME/.local/bin
 # export PATH=$PATH:$(go env GOPATH)/bin
 # export GOPATH=$(go env GOPATH)
 
+export LS_COLORS=$LS_COLORS:'ow=01;34;40'
+
 # To add completion for rustup, run
 # $ rustup completions zsh > ~/.local/share/zsh/functions/Completion/_rustup
 fpath=( "$HOME/.local/share/zsh/functions/Completion" $fpath )
