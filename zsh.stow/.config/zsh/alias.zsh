@@ -69,3 +69,6 @@ alias tns='tmux new-session -s'
 
 # fd in WSL
 alias fd=fdfind
+
+# dotnet
+alias dotnet=dotnet.exe
