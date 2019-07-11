@@ -1,33 +1,27 @@
-snippet // "Insert a comment" i
+snippet // "Insert a comment" bA
 <!-- ${1} -->
 endsnippet
 
-snippet tb "Bold text" i
-**${1}**
+snippet // "Insert a comment"
+<!-- ${1} -->
 endsnippet
 
-snippet ti "Itallic text" i
-*${1}*
+snippet tb "Bold text"
+__${1}__
 endsnippet
 
-snippet s1 "Section" i
-# ${1:${VISUAL:section name}} <a name="sec-${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}" />
-
-$0
+snippet ti "Itallic text"
+_${1}_
 endsnippet
 
-snippet s2 "Subsection" i
-## ${1:${VISUAL:subsection name}} <a name="sub-${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}" />
-
-$0
+snippet it "Item" bA
+* [ ] ${1}
 endsnippet
 
-snippet s3 "Subsubsection" i
-### ${1:${VISUAL:subsubsection name}} <a name="ssub-${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}" />
-
-$0
+snippet ix "Item" bA
+* [x] ${1}
 endsnippet
 
-snippet toc "TOC Entry" i
-1. [${1:${VISUAL:subsubsection name}}](#${2:${VISUAL:sec|sub|ssub}}-${3:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}})
+snippet a "Add a link"
+<a name="${1}" />
 endsnippet

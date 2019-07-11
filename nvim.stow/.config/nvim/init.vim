@@ -30,6 +30,9 @@ Plug 'thaerkh/vim-workspace'
 " Show indentation guides
 Plug 'Yggdroot/indentLine'
 
+" Editorconfig support
+Plug 'editorconfig/editorconfig-vim'
+
 " Language Client
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch'                    : 'next',
