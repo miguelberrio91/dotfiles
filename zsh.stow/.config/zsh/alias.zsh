@@ -26,11 +26,14 @@ function o() {
     i3 scratchpad show > /dev/null 2>&1
 }
 
-# unalias md
-md () {
-    mkdir -p -- "$1" &&
-        cd -P -- "$1"
-}
+# cd aliases
+
+alias tmp='cd $(mktemp -d)'
+
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 
 # git aliases
 
@@ -38,6 +41,8 @@ alias gs="git status"
 
 alias git-undopush="git push -f origin HEAD^:master"
 alias cpbr="git rev-parse --abbrev-ref HEAD | pbcopy"
+
+alias git-prune='git remote prune origin && git fetch -p && git branch -vv | awk '"'"'/: gone]/{print $1}'"'"' | xargs git branch -D'
 
 function give-credit() {
     git commit --amend --author $1 <$2> -C HEAD
@@ -61,14 +66,11 @@ function g() {
     fi
 }
 
-# tmux aliases
-alias ta='tmux attach'
-alias tls='tmux ls'
-alias tat='tmux attach -t'
-alias tns='tmux new-session -s'
-
 # fd in WSL
 alias fd=fdfind
 
 # dotnet
 alias dotnet=dotnet.exe
+alias nuget=nuget.exe
+
+alias psh='powershell.exe /c'

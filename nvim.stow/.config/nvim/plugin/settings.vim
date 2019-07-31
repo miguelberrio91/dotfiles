@@ -1,10 +1,3 @@
-if (has("termguicolors"))
-    set termguicolors
-endif
-
-syntax enable
-colorscheme apprentice
-
 set noswapfile
 
 " clipboard
@@ -15,6 +8,7 @@ set cursorcolumn
 set cursorline
 
 " encoding
+set binary
 set encoding=utf-8
 
 " errorbells
@@ -35,6 +29,9 @@ set smartindent
 set linebreak
 let &showbreak='> '
 set cpoptions+=n
+set textwidth=100
+" Do not auto-wrap on textwidth
+set formatoptions-=t
 
 " performance
 set lazyredraw
@@ -51,7 +48,7 @@ set tabstop=4
 
 " trails
 set list
-set listchars=tab:\|\ ,trail:·,precedes:«,extends:»,nbsp:·
+set listchars=tab:>-,trail:·,precedes:«,extends:»,nbsp:·
 
 " TODO: WTF???
 " style of divider
