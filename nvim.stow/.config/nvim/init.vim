@@ -18,7 +18,7 @@ endif
 call plug#begin($NVIM_PLUG_DIR)
 
 " Aesthetics
-Plug 'romainl/Apprentice',         { 'branch' : 'fancylines-and-neovim' }
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 
@@ -112,7 +112,19 @@ syntax enable
 if (has("termguicolors"))
     set termguicolors
 endif
-colorscheme apprentice
+set t_Co=256
+set background=dark
+let g:PaperColor_Theme_Options = {
+            \   'theme': {
+            \     'default.dark': {
+            \       'override': {
+            \         'folded_fg' : ['#6c6c6c', '242'],
+            \         'folded_bg' : ['#303030', '236'],
+            \       }
+            \     }
+            \   }
+            \ }
+colorscheme PaperColor
 " }}} Colorscheme "
 
 " Deoplete - Completion framework {{{ "
@@ -179,7 +191,7 @@ autocmd FileType * call LC_maps()
 
 " Lightline {{{ "
 let g:lightline = {}
-let g:lightline.colorscheme = 'apprentice'
+let g:lightline.colorscheme = 'PaperColor'
 
 let g:lightline.component_function = { 'gitbranch' : 'GitBranchName' }
 let g:lightline.active = {
