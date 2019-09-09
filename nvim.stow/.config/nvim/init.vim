@@ -18,7 +18,7 @@ endif
 call plug#begin($NVIM_PLUG_DIR)
 
 " Aesthetics
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'romainl/Apprentice',         { 'branch' : 'fancylines-and-neovim' }
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 
@@ -46,6 +46,9 @@ Plug 'cespare/vim-toml'
 
 " C# plugins
 Plug 'OmniSharp/omnisharp-vim'
+
+" HTML plugins
+Plug 'mattn/emmet-vim'
 
 " Markdown plugins
 Plug 'tpope/vim-markdown'
@@ -113,18 +116,7 @@ if (has("termguicolors"))
     set termguicolors
 endif
 set t_Co=256
-set background=dark
-let g:PaperColor_Theme_Options = {
-            \   'theme': {
-            \     'default.dark': {
-            \       'override': {
-            \         'folded_fg' : ['#6c6c6c', '242'],
-            \         'folded_bg' : ['#303030', '236'],
-            \       }
-            \     }
-            \   }
-            \ }
-colorscheme PaperColor
+colorscheme apprentice
 " }}} Colorscheme "
 
 " Deoplete - Completion framework {{{ "
@@ -138,6 +130,13 @@ call deoplete#custom#option('sources', {
 map <leader><leader> <Plug>(easymotion-prefix)
 nmap F <Plug>(easymotion-prefix)s
 " }}} Easymotion "
+
+" Emmet {{{ "
+" Redefine trigger key
+let g:user_emmet_leader_key     = ','
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,xml EmmetInstall
+" }}} Emmet "
 
 " FZF - Fuzzy finder {{{ "
 no <Leader>ff :FZF<CR>
@@ -191,7 +190,7 @@ autocmd FileType * call LC_maps()
 
 " Lightline {{{ "
 let g:lightline = {}
-let g:lightline.colorscheme = 'PaperColor'
+let g:lightline.colorscheme = 'apprentice'
 
 let g:lightline.component_function = { 'gitbranch' : 'GitBranchName' }
 let g:lightline.active = {
