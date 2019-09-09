@@ -37,6 +37,8 @@ fi
 
 zplug load
 
+bindkey -v
+
 # --------------- Source ZDOTDIR files... --------------- #
 
 # Files to source
@@ -55,3 +57,7 @@ compinit
 case $- in *i*)
         if [ -z "$TMUX" ]; then exec tmux; fi;;
 esac
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+unsetopt BG_NICE

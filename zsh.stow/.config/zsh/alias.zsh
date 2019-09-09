@@ -74,3 +74,12 @@ alias dotnet=dotnet.exe
 alias nuget=nuget.exe
 
 alias psh='powershell.exe /c'
+
+function vs() {
+    local vs='/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/devenv.exe'
+    if [[ $# > 0 ]]; then
+        command "$vs" $1 &
+    else
+        command "$vs" &
+    fi
+}
