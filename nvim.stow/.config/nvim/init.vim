@@ -35,8 +35,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Language Client
 Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch'                    : 'next',
-    \ 'do'                    : 'bash install.sh',
+    \ 'branch' : 'next',
+    \ 'do'     : 'bash install.sh',
     \ }
 
 " Rust plugins
@@ -174,8 +174,9 @@ let g:indentLine_char = '|'
 " Language Client {{{ "
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-    \ 'rust'           : ['rustup', 'run', 'stable', 'rls'],
+    \ 'rust' : ['rustup', 'run', 'stable', 'rls'],
     \ }
+let g:LanguageClient_settingsPath = expand('$CONFIG_PATH/settings.json')
 
 function! LC_maps()
     if has_key(g:LanguageClient_serverCommands, &filetype)
