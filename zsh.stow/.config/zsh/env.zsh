@@ -9,6 +9,7 @@ export LESSCHARSET=UTF-8
 # Add Scripts to Path
 export PATH=$PATH:$HOME/Scripts
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin-win
 # Add Screenlayouts to path
 export PATH=$PATH:$HOME/.screenlayout
 # Cargo env
@@ -34,5 +35,6 @@ export FZF_DEFAULT_COMMAND='fdfind --hidden --follow --type file --exclude .git 
 export FZF_TMUX=1
 # export FZF_TMUX_HEIGHT=30\%
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_ALT_C_COMMAND='fdfind --hidden --follow --type directory --exclude .git --exclude .wine'
 export FZF_ALT_C_COMMAND='fdfind --follow --type directory'
 export FZF_ALT_C_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"

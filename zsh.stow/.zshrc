@@ -38,6 +38,7 @@ fi
 zplug load
 
 bindkey -v
+export KEYTIMEOUT=1
 
 # --------------- Source ZDOTDIR files... --------------- #
 
@@ -59,5 +60,6 @@ case $- in *i*)
 esac
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 unsetopt BG_NICE

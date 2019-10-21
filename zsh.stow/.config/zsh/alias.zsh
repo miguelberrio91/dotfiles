@@ -69,10 +69,6 @@ function g() {
 # fd in WSL
 alias fd=fdfind
 
-# dotnet
-alias dotnet=dotnet.exe
-alias nuget=nuget.exe
-
 alias psh='powershell.exe /c'
 
 function vs() {
